@@ -521,12 +521,10 @@ cl {
 
         return <span style={wrapStyle}>•</span>;
     }
-
-    # ---------- Minimal Navigation for auth pages ----------
-    # ---------- Minimal Navigation for auth pages ----------
     # ---------- Header / Navigation ----------
     def Navigation() -> any {
         isLoggedIn = jacIsLoggedIn();
+        navigate = useNavigate();
 
         # Show header always; show auth links only when NOT logged in
         return <div style={{
@@ -571,8 +569,6 @@ cl {
             ) if not isLoggedIn else None}
         </div>;
     }
-
-
 
     # ---------- Login ----------
     def LoginPage() -> any {
